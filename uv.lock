@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.12"
 resolution-markers = [
     "python_full_version >= '3.13'",
@@ -550,11 +550,13 @@ dependencies = [
     { name = "asyncio-throttle" },
     { name = "black" },
     { name = "chainlit" },
+    { name = "fastapi" },
     { name = "httpx" },
     { name = "pydantic" },
     { name = "python-dotenv" },
     { name = "requests" },
     { name = "streamlit" },
+    { name = "uvicorn" },
 ]
 
 [package.metadata]
@@ -563,11 +565,13 @@ requires-dist = [
     { name = "asyncio-throttle", specifier = ">=1.0.2" },
     { name = "black", specifier = ">=25.1.0" },
     { name = "chainlit", specifier = ">=2.5.5" },
+    { name = "fastapi", specifier = ">=0.104.1" },
     { name = "httpx", specifier = ">=0.28.1" },
     { name = "pydantic", specifier = ">=2.11.7" },
     { name = "python-dotenv", specifier = ">=1.1.0" },
     { name = "requests", specifier = ">=2.32.4" },
     { name = "streamlit", specifier = ">=1.45.1" },
+    { name = "uvicorn", specifier = ">=0.24.0" },
 ]
 
 [[package]]
