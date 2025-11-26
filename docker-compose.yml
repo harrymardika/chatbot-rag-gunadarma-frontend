@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  chatbot-frontend:
+    build: .
+    container_name: chatbot-rag-frontend
+    ports:
+      - "8080:8080"
+    environment:
+      - BACKEND_URL=http://host.docker.internal:8000
+      - CHAINLIT_HOST=0.0.0.0
+      - CHAINLIT_PORT=8080
+      - SEARCH_MAX_RESULTS=10
+      - CACHE_TTL=300
+      - ENABLE_CACHING=true
+      - DEFAULT_SEARCH_STRATEGY=smart
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s

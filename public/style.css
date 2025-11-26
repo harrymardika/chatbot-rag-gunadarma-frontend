@@ -1168,5 +1168,352 @@ button[class*="transition-colors"] {
 }
 
 /* =================================== */
+/* SESSION PREVIEW MODAL ACTIONS */
+/* =================================== */
+
+.session-preview-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.btn-continue-session,
+.btn-copy-session {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-continue-session {
+  background-color: var(--gunadarma-primary);
+  color: white;
+  flex: 1;
+  max-width: 200px;
+}
+
+.btn-continue-session:hover {
+  background-color: var(--gunadarma-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(104, 67, 154, 0.3);
+}
+
+.btn-continue-session:active {
+  transform: translateY(0);
+}
+
+.btn-copy-session {
+  background-color: transparent;
+  color: var(--gunadarma-primary);
+  border: 2px solid var(--gunadarma-primary);
+  flex: 1;
+  max-width: 180px;
+}
+
+.btn-copy-session:hover {
+  background-color: var(--gunadarma-primary-light);
+  transform: translateY(-1px);
+}
+
+.btn-copy-session:active {
+  transform: translateY(0);
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-continue-session {
+    background-color: var(--gunadarma-primary);
+  }
+
+  .btn-continue-session:hover {
+    background-color: var(--gunadarma-primary-hover);
+  }
+
+  .btn-copy-session {
+    color: var(--gunadarma-primary-light);
+    border-color: var(--gunadarma-primary-light);
+  }
+
+  .btn-copy-session:hover {
+    background-color: rgba(104, 67, 154, 0.2);
+  }
+}
+
+@media (max-width: 600px) {
+  .session-preview-actions {
+    flex-direction: column;
+  }
+
+  .btn-continue-session,
+  .btn-copy-session {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+/* =================================== */
+/* NOTIFICATION TOAST */
+/* =================================== */
+
+.chat-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--gunadarma-primary);
+  color: white;
+  padding: 14px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10001;
+  font-size: 14px;
+  font-weight: 500;
+  transform: translateX(400px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  max-width: 320px;
+}
+
+.chat-notification.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .chat-notification {
+    background-color: var(--gunadarma-primary-dark);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@media (max-width: 640px) {
+  .chat-notification {
+    right: 10px;
+    left: 10px;
+    max-width: none;
+    text-align: center;
+  }
+}
+
+/* =================================== */
+/* SESSION CONTEXT BANNER */
+/* =================================== */
+
+.session-context-banner {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(
+    135deg,
+    var(--gunadarma-primary-light) 0%,
+    rgba(104, 67, 154, 0.15) 100%
+  );
+  border-bottom: 2px solid var(--gunadarma-primary);
+  backdrop-filter: blur(10px);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.context-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.context-banner-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  background-color: var(--gunadarma-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.context-banner-text {
+  flex: 1;
+  font-size: 14px;
+  color: var(--gunadarma-primary-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.context-banner-text strong {
+  font-weight: 600;
+}
+
+.context-banner-count {
+  background-color: var(--gunadarma-primary);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.context-banner-close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: var(--gunadarma-primary-dark);
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.context-banner-close:hover {
+  background-color: rgba(104, 67, 154, 0.2);
+  transform: scale(1.1);
+}
+
+.context-banner-close:active {
+  transform: scale(0.95);
+}
+
+@media (prefers-color-scheme: dark) {
+  .session-context-banner {
+    background: linear-gradient(
+      135deg,
+      rgba(104, 67, 154, 0.3) 0%,
+      rgba(74, 46, 107, 0.2) 100%
+    );
+    border-bottom-color: var(--gunadarma-primary-light);
+  }
+
+  .context-banner-text {
+    color: var(--gunadarma-primary-light);
+  }
+
+  .context-banner-close {
+    color: var(--gunadarma-primary-light);
+  }
+
+  .context-banner-close:hover {
+    background-color: rgba(104, 67, 154, 0.3);
+  }
+}
+
+@media (max-width: 640px) {
+  .context-banner-content {
+    padding: 10px 15px;
+  }
+
+  .context-banner-text {
+    font-size: 13px;
+  }
+
+  .context-banner-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* =================================== */
+/* RESTORED MESSAGES STYLING */
+/* =================================== */
+
+.restored-message {
+  animation: fadeInUp 0.3s ease-out backwards;
+  position: relative;
+}
+
+/* NO BADGE - Clean interface as requested */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger animation delays for smooth appearance */
+.restored-message[data-message-index="0"] {
+  animation-delay: 0.05s;
+}
+
+.restored-message[data-message-index="1"] {
+  animation-delay: 0.1s;
+}
+
+.restored-message[data-message-index="2"] {
+  animation-delay: 0.15s;
+}
+
+.restored-message[data-message-index="3"] {
+  animation-delay: 0.2s;
+}
+
+.restored-message[data-message-index="4"] {
+  animation-delay: 0.25s;
+}
+
+.restored-message[data-message-index="5"] {
+  animation-delay: 0.3s;
+}
+
+.restored-message[data-message-index="6"] {
+  animation-delay: 0.35s;
+}
+
+.restored-message[data-message-index="7"] {
+  animation-delay: 0.4s;
+}
+
+.restored-message[data-message-index="8"] {
+  animation-delay: 0.45s;
+}
+
+.restored-message[data-message-index="9"] {
+  animation-delay: 0.5s;
+}
+
+/* Make copy button work on restored messages */
+.restored-message .lucide-copy {
+  cursor: pointer;
+}
+
+.restored-message button:hover .lucide-copy {
+  color: var(--gunadarma-primary) !important;
+}
+
+/* =================================== */
 /* END CHAT HISTORY & CONTROLS STYLING */
 /* =================================== */
