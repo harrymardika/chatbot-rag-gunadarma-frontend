@@ -181,13 +181,13 @@ sequenceDiagram
 
 1.  **Python 3.12+**: [Unduh di sini](https://www.python.org/downloads/).
 2.  **Git**: [Instal Git](https://git-scm.com/downloads).
-3.  **Backend Aktif**: Pastikan layanan [chatbot-rag-gunadarma-backend](https://github.com/maybeitsai/chatbot-rag-gunadarma-backend) sudah berjalan.
+3.  **Backend Aktif**: Pastikan layanan [chatbot-rag-gunadarma-backend](https://github.com/harrymardika/chatbot-rag-gunadarma-backend) sudah berjalan.
 
 ### Langkah-langkah Instalasi
 
 1.  **Clone Repositori**
     ```bash
-    git clone https://github.com/maybeitsai/chatbot-rag-gunadarma-frontend.git
+    git clone https://github.com/harrymardika/chatbot-rag-gunadarma-frontend.git
     cd chatbot-rag-gunadarma-frontend
     ```
 
